@@ -8,6 +8,6 @@ if (
   console.info = noop;
 }
 
-function noop() {
-  return undefined;
-}
+// function noop() {
+//   return undefined;
+// }
