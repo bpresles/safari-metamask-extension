@@ -6,27 +6,20 @@ First of all, before beginning, make sure you have Safari 14 and Xcode 12 instal
 ### Building the extension for Chrome
 
 ```
-$ nvm use 14
-$ yarn setup && yarn dist
+$ nvm use 16
+```
 
-...
+Copy .metamaskrc.dist to .metamaskrc
+```
+cp .metamaskrc.dist .metamaskrc
+```
 
-build completed. task timeline:
-█ clean 0.0s
-█████████████████████████████████████████ prod 54.8s
-███▋ styles:prod 3.5s
-  ▐██████████████████████████▋ scripts:deps:background 35.7s
-  ▐██████████████▍ scripts:deps:ui 18.9s
-  ▐██████████████████████████▋ scripts:core:prod:background 35.6s
-  ▐████████████████████████████████████▎ scripts:core:prod:ui 48.8s
-  ▐██████▊ scripts:core:prod:phishing-detect 8.5s
-  ▐█████ scripts:core:prod:initSentry 6.1s
-  ▐█████▋ scripts:core:prod:contentscript 6.9s
-  ▐██▊ scripts:core:prod:disable-console 3.0s
-  ▐███████████████████████████ static:prod 36.2s
-  ▐▋ manifest:prod 0.0s
-                                      ███ zip 2.5s
-✨  Done in 57.40s.
+Edit .metamaskrc and change the INFURA_PROJECT_ID to your own project id.
+
+
+Build Metamask.
+```
+$ yarn dist
 ```
 
 ### Bootstrapping the Xcode project
